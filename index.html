@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Travel Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Шрифт -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <span>🌍</span>
+            <h2>Travel Explorer</h2>
+        </div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+
+
+    <!-- Hero -->
+    <section class="hero">
+
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+
+        <div class="hero-content">
+            <h1>Explore the world</h1>
+            <p>Choose a country to see information and weather.</p>
+
+            <div class="search-box">
+
+                <select id="countrySelect">
+                    <option value="">Select a country...</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Ukraine">Ukraine</option>
+                    <option value="France">France</option>
+                    <option value="Germany">Germany</option>
+                </select>
+
+                <button id="searchBtn">Search</button>
+
+            </div>
+        </div>
+
+
+        <!-- Гори -->
+        <div class="mountains">
+            <div class="mountain mountain-small"></div>
+            <div class="mountain mountain-big"></div>
+            <div class="mountain mountain-right"></div>
+            <div class="hills"></div>
+        </div>
+
+    </section>
+
+
+    <!-- Main content -->
+    <main>
+
+        <!-- Country information -->
+        <section class="country-section">
+
+            <div class="country-left">
+
+                <div class="country-title">
+
+                    <div class="flag">
+                        🇯🇵
+                    </div>
+
+                    <h1>Japan</h1>
+
+                </div>
+
+                <p class="capital">
+                    Capital: <strong>Tokyo</strong>
+                </p>
+
+
+                <!-- Cards -->
+                <div class="info-cards">
+
+                    <div class="info-card population">
+                        <span class="icon">👥</span>
+
+                        <div>
+                            <p>Population</p>
+                            <h3>124.5M</h3>
+                            <small>people</small>
+                        </div>
+                    </div>
+
+
+                    <div class="info-card currency">
+                        <span class="icon">💲</span>
+
+                        <div>
+                            <p>Currency</p>
+                            <h3>JPY ¥</h3>
+                            <small>Japanese Yen</small>
+                        </div>
+                    </div>
+
+
+                    <div class="info-card language">
+                        <span class="icon">💬</span>
+
+                        <div>
+                            <p>Language</p>
+                            <h3>Japanese</h3>
+                            <small>Official</small>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- About -->
+                <div class="about-country">
+
+                    <h2>About Japan</h2>
+
+                    <p>
+                        Japan is an island country in East Asia. It is known
+                        for its rich culture, advanced technology, and
+                        beautiful landscapes.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Weather -->
+            <div class="weather-card">
+
+                <h2>Weather in Tokyo</h2>
+
+
+                <div class="main-weather">
+
+                    <div class="sun">☀️</div>
+
+                    <div>
+                        <h1>27°C</h1>
+                        <p>Clear sky</p>
+                    </div>
+
+                </div>
+
+
+                <div class="weather-details">
+
+                    <div>
+                        <span>💧</span>
+                        <div>
+                            <p>Humidity</p>
+                            <strong>65%</strong>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <span>💨</span>
+                        <div>
+                            <p>Wind</p>
+                            <strong>12 km/h</strong>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <span>🌡️</span>
+                        <div>
+                            <p>Feels like</p>
+                            <strong>29°C</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Forecast -->
+                <div class="forecast">
+
+                    <div>
+                        <strong>Mon</strong>
+                        <span>☀️</span>
+                        <p>29°C</p>
+                    </div>
+
+                    <div>
+                        <strong>Tue</strong>
+                        <span>☁️</span>
+                        <p>28°C</p>
+                    </div>
+
+                    <div>
+                        <strong>Wed</strong>
+                        <span>🌤️</span>
+                        <p>26°C</p>
+                    </div>
+
+                    <div>
+                        <strong>Thu</strong>
+                        <span>🌧️</span>
+                        <p>24°C</p>
+                    </div>
+
+                    <div>
+                        <strong>Fri</strong>
+                        <span>☀️</span>
+                        <p>27°C</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        © 2026 Travel Explorer
+    </footer>
+
+</body>
+</html>
+
