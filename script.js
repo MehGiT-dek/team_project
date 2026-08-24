@@ -43,3 +43,48 @@ async function getCountry() {
             alert('Something went wrong. Please try again later.');
         }
     }
+
+async function getWeather(latitude, longitude, capital) {
+    try {
+        const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,weather_code&timezone=auto`);
+        const data = await response.json();
+        document.querySelector('.weather-card h2').textContent = `Weather in ${capital}`;
+        document.querySelector('.main-weather h1').textContent = `${Math.round(data.current.temperature_2m)}°C`;
+        document.querySelector('.main-weather p').textContent = getWeatherDescription(data.current.weather_code);
+        document.querySelector('.sun').textContent = getWeatherIcon(data.current.weather_code);
+        document.querySelector('.weather-details > div:nth-child(1) strong').textContent = `${data.current.relative_humidity_2m}%`;
+        document.querySelector('.weather-details > div:nth-child(2) strong').textContent = `${Math.round(data.current.wind_speed_10m)} km/h`;
+        document.querySelector('.weather-details > div:nth-child(3) strong').textContent = `${Math.round(data.current.apparent_temperature)}°C`;
+    } catch (error) {
+        console.error("weather error:", error);
+    }
+}
+
+function getWeatherDescription(code) {
+    if (code === 0) {return 'Clear sky';}
+    if (code === 1 || code === 2) {return 'Partly cloudy';}
+    if (code === 3) {return 'Cloudy';}
+    if (code === 45 || code === 48) {return 'Foggy';}
+    if (code >= 51 && code <= 67) {return 'Drizzle';}
+    if (code >= 71 && code <= 77) {return 'Snowy';}
+    if (code >= 80 && code <= 82) {return 'Rain showers';}
+    if (code >= 95) {return 'Thunderstorm';}
+    return 'Unknown weather';
+}
+function getWeatherIcon(code) {
+    if (code === 0) {return '☀️';}
+    if (code === 1 || code === 2) {return '⛅';}
+    if (code === 3) {return '☁️';}
+    if (code === 45 || code === 48) {return '🌫️';}
+    if (code >= 51 && code <= 67) {return '🌦️';}
+    if (code >= 71 && code <= 77) {return '❄️';}
+    if (code >= 80 && code <= 82) {return '🌧️';}
+    if (code >= 95) {return '⛈️';}
+    return '❓';
+}
+
+searchBtn.addEventListener('click', getCountry);
+window.addEventListener('load', () => {
+    countrySelect.value = 'Japan';
+    getCountry();
+});
