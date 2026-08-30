@@ -85,6 +85,6 @@ function getWeatherIcon(code) {
 
 searchBtn.addEventListener('click', getCountry);
 window.addEventListener('load', () => {
-    countrySelect.value = 'Japan';
+    countrySel.value = 'Japan';
     getCountry();
 });
