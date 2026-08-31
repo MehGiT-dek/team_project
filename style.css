@@ -1,53 +1,382 @@
-body {
-    font-family: Arial, sans-serif;
+*{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #F0F8FF;
+    font-family: 'Inter', sans-serif;
 }
+body {
+    background-color: #F9F9FA;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 4px;
+    background-color: #FFFFFF;
+}
+
+.country-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.country-title .flag {
+    width: 56px;
+    height: 38px; 
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.country-title .flag img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.country-title .flag span {
+    font-size: 32px;
+    line-height: 1;
+}
+
+
+
+.country-title .name {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.capital {
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 24px;
+}
+
+.capital strong {
+    font-weight: 400;
+}
+
 .blue {
     color:rgb(76, 76, 246)
 }
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 nav {
-    text-align: right;
+    display: flex;
+    gap: 24px;
 }
-.explore {
-    text-align: center;
-}
-select {
-    box-sizing: border-box;
-    position: absolute;
 
-    width: 267px;
-    height: 34px;
-    left: 290px;
-    top: 0px;
-
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.37);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
-
-    padding: 0 12px;
+nav a {
+    text-decoration: none;
+    color: #0B54EB;
+    font-weight: 600;
     font-size: 16px;
 }
 
-button {
-    box-sizing: border-box;
-    position: absolute;
+.hero {
+    position: relative;
+    background-image: url('img/hero.png');
+    padding: 60px 20px 80px;
+    text-align: center;
+    overflow: hidden;
+}
 
-    width: 78px;
-    height: 34px;
-    left: 575px;
-    top: 0px;
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
+.hero h1.explore {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.hero p.explore {
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.search-box select {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background-color: #ffffff;
+    font-size: 14px;
+    min-width: 240px;
+    outline: none;
+    cursor: pointer;
+} 
+
+.search-box button {
+    padding: 10px 24px;
+    background-color: #1966E8;
+    color: #ffffff;
     border: none;
-    background: #1769e0;
-    color: white;
-    border-radius: 4px;
-
+    border-radius: 8px;
+    font-weight: 600;
     font-size: 14px;
     cursor: pointer;
+
 }
-.name {
-     position: absolute; width: 118px; height: 48px; left: 192px; top: 453px;
+
+.search-box button:hover {
+    background-color: #5285e9;
+}
+
+.country-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+/* Верхняя часть: Флаг и Название */
+.country-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 8px;
+}
+
+.country-title .flag {
+    font-size: 32px; 
+}
+
+.country-title .name {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+
+.info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 12px; 
+}
+
+
+.info-card p {
+    font-size: 12px;
+    color: #475569;
+    margin: 2px;
+}
+
+.info-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.info-card small {
+    font-size: 11px;
+    color: #64748b;
+}
+
+
+.info-card .icon {
+    font-size: 20px;
+}
+
+
+.info-card.population {
+    background-color: #e5f2fe; 
+}
+
+.info-card.currency {
+    background-color: #abaca9; 
+}
+
+.info-card.language {
+    background-color: #fef9e8; 
+
+.about-country {
+    border:rgba(0, 0, 0, 0.25) solid 1px;
+    background-color: #ffffff;
+    padding:24px;
+    border-radius: 14px;
+
+}
+
+.about-country h2 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.about-country p {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+    
+}
+
+    /* Общий контейнер, чтобы выстроить блоки "Инфо" и "Погода" в один ряд */
+.country-section {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 28px;
+    align-items: start;
+}
+/
+.country-left {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.weather-card {
+    background-color: #f0f7ff; 
+    border-radius: 18px;
+    padding: 24px;
+    border: 1px solid #e0eeff
+}
+
+.weather-card h2 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+
+/* main {
+    flex: 1;
+    max-width: 1080px;
+    width: 100%;
+    margin: 32px auto;
+    padding: 0 20px;
+} */
+
+.main-weather {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.main-weather .sun {
+    font-size: 48px;
+}
+
+.main-weather h1 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.main-weather p {
+    font-size: 14px;
+    color: #475569;
+}
+
+/* Детали */
+.weather-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dbeafe;
+    border-top: 1px solid #dbeafe;
+}
+
+.weather-details > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.weather-details p {
+    font-size: 11px;
+    color: #64748b;
+}
+
+.weather-details strong {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #111111;
+    display: block;
+}
+
+.forecast {
+    background: #ffffff; 
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 12px;
+    text-align: center;
+}
+
+.forecast > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.forecast strong {
+    font-size: 12px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.forecast span {
+    font-size: 18px;
+}
+
+.forecast p {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+@media (max-width: 768px) {
+    .country-section {
+        grid-template-columns: 1fr;
+    }
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+}
 }
