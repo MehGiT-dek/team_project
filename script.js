@@ -5,7 +5,19 @@ const countryCodes = {
     Japan: "JP",
     Ukraine: "UA",
     France: "FR",
-    Germany: "DE"
+    Germany: "DE",
+    Italy: "IT",
+    Luxembourg: "LU",
+    Spain: "ES",
+    Portugal: "PT",
+    United_Kingdom: "GB",
+    United_States: "US",
+    Canada: "CA",
+    Bhutan: "BT",
+    New_Zealand: "NZ",
+    Denmark: "DK",
+    Norway: "NO",
+    Sweden: "SE"
 };
 
 async function getCountry() {
