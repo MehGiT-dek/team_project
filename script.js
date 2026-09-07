@@ -245,7 +245,6 @@ function updateForecast(daily) {
 
 searchBtn.addEventListener("click", getCountry);
 
-countrySel.addEventListener("change", getCountry);
 
 window.addEventListener("DOMContentLoaded", () => {
     countrySel.value = "Japan";
