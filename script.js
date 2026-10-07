@@ -255,7 +255,11 @@ function updateForecast(daily) {
     }
 }
 
-searchBtn.addEventListener("click", getCountry);
+searchBtn.addEventListener("click", () => {
+    gtag('event', 'country_search');
+
+    getCountry();
+});
 
 
 window.addEventListener("DOMContentLoaded", () => {
